@@ -7,5 +7,5 @@ WTB_JSON="{\"applicationId\": \"$WERCKER_TRIGGER_BUILD_APPLICATION_ID\", \
 \"branch\": \"$WERCKER_GIT_BRANCH\", \
 \"message\": \"$WERCKER_TRIGGER_BUILD_MESSAGE\"}"
 echo "$WTB_JSON"
-curl -s -H "Content-type: application/json" -H "Authorization: Bearer $WERCKER_WAIT_FOR_BUILD_TOKEN" "$WTB_ENDPOINT" -d "$WTB_JSON"
+curl -s -H "Content-type: application/json" -H "Authorization: Bearer $WERCKER_TRIGGER_BUILD_TOKEN" "$WTB_ENDPOINT" -d "$WTB_JSON"
 
