@@ -1,6 +1,6 @@
 #!/bin/bash
 
-WTB_ENDPOINT="https://app.wercker.com/api/v3/builds/
+WTB_ENDPOINT="https://app.wercker.com/api/v3/builds/"
 
 
 WTB_JSON="\{\"applicationId\": \"$WERCKER_TRIGGER_BUILD_APPLICATION_ID\", \
