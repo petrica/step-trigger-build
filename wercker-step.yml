@@ -1,0 +1,17 @@
+name: trigger-build
+version: 0.5.0
+description: Trigger an upstream wercker build.
+keywords:
+  - build
+  - trigger
+  - dependency
+properties:
+  application-id:
+    type: string
+    required: true
+  message:
+    type: string
+    required: true
+  token:
+    type: string
+    required: true
