@@ -1,5 +1,5 @@
 name: trigger-build
-version: 0.5.3
+version: 0.6.0
 description: Trigger an upstream wercker build.
 keywords:
   - build
@@ -9,7 +9,7 @@ properties:
   application-id:
     type: string
     required: true
-  message:
+  pipeline-id:
     type: string
     required: true
   token:
