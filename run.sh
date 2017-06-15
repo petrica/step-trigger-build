@@ -16,7 +16,7 @@ echo "Calling $WTB_ENDPOINT"
 export WERCKER_TRIGGER_RESPONSE=$(curl -s -k -H "Content-type: application/json" -H "Authorization: Bearer $WERCKER_TRIGGER_BUILD_TOKEN" "$WTB_ENDPOINT" -d "$WTB_JSON" | grep \"error\")
 
 if [ ! -z "$WERCKER_TRIGGER_RESPONSE" ]; then
-  echo $WERCKER_TRIGGER_RESPONSE
+  echo "$WERCKER_TRIGGER_RESPONSE"
   exit 1
 fi
 
