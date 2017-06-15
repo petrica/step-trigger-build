@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 WTB_ENDPOINT="https://app.wercker.com/api/v3/runs/"
 
 
