@@ -13,7 +13,6 @@ Example:
         - petrica/trigger-build:
             application-id: $WERCKER_APPLICATION_ID
             pipeline-id: $WERCKER_PIPELINE_ID
-            message: $MESSAGE
             token: $WERCKER_API_TOKEN
 
 
