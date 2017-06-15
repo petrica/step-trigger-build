@@ -1,6 +1,6 @@
 name: trigger-build
-version: 0.1.4
-description: Trigger an upstream wercker build.
+version: 0.1.5
+description: Trigger an upstream pipeline build
 keywords:
   - build
   - trigger
