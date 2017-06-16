@@ -1,7 +1,6 @@
 # Trigger Build
 
-This is a wercker step that triggers another pipeline build and returns on error
-the JSON in WERCKER_TRIGGER_RESPONSE env variable.
+This is a wercker step that triggers another pipeline build.
 
 You will need to create a personal API access token for wercker
 

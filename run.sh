@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -e
-
 WTB_ENDPOINT="https://app.wercker.com/api/v3/runs/"
 
 
@@ -13,11 +11,10 @@ WTB_JSON="{\"applicationId\": \"$WERCKER_TRIGGER_BUILD_APPLICATION_ID\", \
 echo "$WTB_JSON"
 echo "Calling $WTB_ENDPOINT"
 
-export WERCKER_TRIGGER_RESPONSE=$(curl -s -k -H "Content-type: application/json" -H "Authorization: Bearer $WERCKER_TRIGGER_BUILD_TOKEN" "$WTB_ENDPOINT" -d "$WTB_JSON" | grep \"error\")
-
-if [ ! -z "$WERCKER_TRIGGER_RESPONSE" ]; then
-  echo "$WERCKER_TRIGGER_RESPONSE"
-  exit 1
+if ! curl --fail -k --write-out "\n\nStatus code: %{http_code}\n" -H "Content-type: application/json" -H "Authorization: Bearer $WERCKER_TRIGGER_BUILD_TOKEN" "$WTBC_ENDPOINT" -d "$WTBC_JSON"; then
+  faild "$WBTC_TRIGGER_RESPONSE"
 fi
+
+success "\nBuild triggered successfully."
 
 
