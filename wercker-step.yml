@@ -1,5 +1,5 @@
 name: trigger-build
-version: 0.1.6
+version: 0.1.7
 description: Trigger an upstream pipeline build
 keywords:
   - build

@@ -12,7 +12,7 @@ echo "$WTB_JSON"
 echo "Calling $WTB_ENDPOINT"
 
 if ! curl --fail -k --write-out "\n\nStatus code: %{http_code}\n" -H "Content-type: application/json" -H "Authorization: Bearer $WERCKER_TRIGGER_BUILD_TOKEN" "$WTBC_ENDPOINT" -d "$WTBC_JSON"; then
-  faild "$WBTC_TRIGGER_RESPONSE"
+  fail "$WBTC_TRIGGER_RESPONSE"
 fi
 
 success "\nBuild triggered successfully."
