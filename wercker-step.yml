@@ -1,17 +1,17 @@
 name: trigger-build
-version: 0.1.7
+version: 0.1.8
 description: Trigger an upstream pipeline build
 keywords:
   - build
   - trigger
   - dependency
 properties:
-  application-id:
-    type: string
-    required: true
   pipeline-id:
     type: string
     required: true
   token:
     type: string
     required: true
+  branch:
+    type: string
+    required: false
