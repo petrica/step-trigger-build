@@ -12,5 +12,6 @@ Example:
             pipeline-id: $WERCKER_PIPELINE_ID
             token: $WERCKER_API_TOKEN
             branch: master
+            message: custom trigger message
 
 
