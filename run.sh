@@ -21,7 +21,7 @@ generate_post_data()
 EOF
 }
 
-echo "$(generate_post_data)"
+echo "JSON: $(generate_post_data)"
 
 if ! curl --fail -k --write-out "\n\nStatus code: %{http_code}\n" -H "Content-type: application/json" -H "Authorization: Bearer $WERCKER_TRIGGER_BUILD_TOKEN" -d "$(generate_post_data)" https://app.wercker.com/api/v3/runs/; then
   fail "$WBTC_TRIGGER_RESPONSE"
