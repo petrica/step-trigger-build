@@ -2,7 +2,7 @@
 
 WTB_ENDPOINT="https://app.wercker.com/api/v3/runs/"
 
-if [ -z $WERCKER_TRIGGER_BUILD_BRANCH ]; then
+if [ -z "$WERCKER_TRIGGER_BUILD_BRANCH" ]; then
   WERCKER_TRIGGER_BUILD_BRANCH="$WERCKER_GIT_BRANCH"
 fi
 
