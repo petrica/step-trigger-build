@@ -2,10 +2,12 @@
 
 WTB_ENDPOINT="https://app.wercker.com/api/v3/runs/"
 
+if [ -z $WERCKER_TRIGGER_BUILD_BRANCH ]; then
+  WERCKER_TRIGGER_BUILD_BRANCH="$WERCKER_GIT_BRANCH"
+fi
 
-WTB_JSON="{\"applicationId\": \"$WERCKER_TRIGGER_BUILD_APPLICATION_ID\", \
-\"pipelineId\": \"$WERCKER_TRIGGER_BUILD_PIPELINE_ID\", \
-\"branch\": \"$WERCKER_GIT_BRANCH\", \
+WTB_JSON="{\"pipelineId\": \"$WERCKER_TRIGGER_BUILD_PIPELINE_ID\", \
+\"branch\": \"$WERCKER_TRIGGER_BUILD_BRANCH\", \
 \"sourceRunId\": \"$WERCKER_RUN_ID\", \
 \"message\": \"$(git log -1 --pretty=%s)\"}"
 echo "$WTB_JSON"
